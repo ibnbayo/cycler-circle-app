@@ -1,0 +1,16 @@
+.cars{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 100px;
+    margin-bottom: 60px;
+}
+.car-wrap{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+}
+.car-img{
+    border-radius: 5%;
+    /* object-fit: cover;
+    width: 22vw; */
+}

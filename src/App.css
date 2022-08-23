@@ -1,13 +1,19 @@
 .header{
   display: flex;
-  margin-top: 15px;
+  padding-top: 15px;
   justify-content: space-between;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid rgb(204, 204, 204);
+  background-color: rgb(240, 240, 240);
+  position: fixed;
+  top: 0;
+  width: 100%;
+
 }
 
 .logo{
   margin-left: 80px;
   height: 50px;
+  border-radius: 99%;
 }
 
 .search{
@@ -74,7 +80,9 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  border-top: 1px solid grey;
-  padding: 3px;
+  border-top: 1px solid rgb(204, 204, 204);
+  padding: 7px;
+  background-color: rgb(240, 240, 240);
+  opacity: 1;
   
 }
