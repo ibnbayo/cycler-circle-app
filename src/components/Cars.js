@@ -1,6 +1,9 @@
 import {useState, useEffect} from "react"
+import Slider from 'react-slick';
 import axios from "axios"
 import './Cars.css'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const options = {
     method: 'GET',
@@ -12,6 +15,31 @@ const options = {
   }
 
 function Cars() {
+
+    const settings = {
+        slidesToShow: 6,
+        slidesToScroll: 2,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        variableWidth: true,
+        infinite: true,
+        arrows: true,
+        dots: false,
+        pauseOnHover: true,
+        responsive: [{
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 4
+          }
+        }, {
+          breakpoint: 520,
+          settings: {
+            slidesToShow: 2
+          }
+        }]
+      };
+
+
     const [carz, setCarz] = useState([])
 
     useEffect(() => {
@@ -31,6 +59,18 @@ function Cars() {
     // console.log(allCars)
     return(
         <div className="cars">
+            <Slider {...settings}>
+            <div>
+            <div>hjhfjfj</div>
+            <div>jjfjfjfjfiooo4</div>
+            <div>eqewerwr</div>
+            </div>
+            <div>
+            <div>hjhfjfj</div>
+            <div>jjfjfjfjfiooo4</div>
+            <div>eqewerwr</div>
+            </div>
+                </Slider>
             {carz.map((car) => (
                 <div className="car-wrap" key={carz.indexOf(car)}>
                     <img className="car-img" src={`${car.img}`}/>
