@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react"
-import Slider from 'react-slick';
+// import Slider from 'react-slick';
 import axios from "axios"
 import './Cars.css'
 import "slick-carousel/slick/slick.css";
@@ -59,7 +59,7 @@ function Cars() {
     // console.log(allCars)
     return(
         <div className="cars">
-            <Slider {...settings}>
+            {/* <Slider {...settings}>
             <div>
             <div>hjhfjfj</div>
             <div>jjfjfjfjfiooo4</div>
@@ -70,7 +70,7 @@ function Cars() {
             <div>jjfjfjfjfiooo4</div>
             <div>eqewerwr</div>
             </div>
-                </Slider>
+                </Slider> */}
             {carz.map((car) => (
                 <div className="car-wrap" key={carz.indexOf(car)}>
                     <img className="car-img" src={`${car.img}`}/>

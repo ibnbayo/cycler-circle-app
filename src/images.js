@@ -1,6 +1,8 @@
+import MazdaIcon from './components/assets/mazda.svg'
+
 const images = [{
     id: 1,
-    src: "https://i.postimg.cc/KcJ7DGJy/Screenshot-Restaurant.png",
+    src: MazdaIcon,
     alt: "Image 1"
 },
 {

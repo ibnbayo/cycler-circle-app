@@ -1,7 +1,7 @@
 import Header from './components/Header.js'
 import Footer from './components/Footer.js';
 import Cars from './components/Cars.js'
-import ControlledCarousel from './components/ControlledCarousel'
+// import ControlledCarousel from './components/ControlledCarousel'
 import images from "./images";
 import ImageSlider from "./imageSlider.js";
 import './App.css';
@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <Header/>
       <ImageSlider images={images}/>
-      <ControlledCarousel/>
+      {/* <ControlledCarousel/> */}
       <Cars/>
       <Footer/>
     </div>
