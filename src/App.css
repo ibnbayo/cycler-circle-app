@@ -72,7 +72,9 @@
   height: 20px;
 }
 
-
+.carousel{
+  margin-left: 50px;
+}
 
 .footer{
   position: fixed;
@@ -86,3 +88,4 @@
   opacity: 1;
   
 }
+

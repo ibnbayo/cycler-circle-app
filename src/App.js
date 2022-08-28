@@ -11,9 +11,9 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <ImageSlider images={images}/>
+      <ImageSlider className="carousel" images={images}/>
       {/* <ControlledCarousel/> */}
-      <Cars/>
+      {/* <Cars/> */}
       <Footer/>
     </div>
   );
