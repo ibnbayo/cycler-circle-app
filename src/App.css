@@ -88,9 +88,9 @@
   position: fixed;
 } */
 .no-search{
-  margin-left: 40vw;
+  margin-left: 10vw;
   position: absolute;
-  top: 100;
+  top: 40vh;
   z-index: -1;
 
 }
