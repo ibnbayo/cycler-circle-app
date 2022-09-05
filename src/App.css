@@ -2,8 +2,8 @@
   display: flex;
   padding-top: 15px;
   justify-content: space-between;
-  border-bottom: 1px solid rgb(204, 204, 204);
-  background-color: rgb(240, 240, 240);
+  border-bottom: 1px solid rgb(221, 221, 221);
+  background-color: rgb(250, 250, 250);
   position: fixed;
   top: 0;
   width: 100%;
@@ -27,6 +27,7 @@
   border-radius: 30px;
   text-indent: 25px;
   margin-left: 200px;
+  outline: none;
 }
 
 .search-icon{
@@ -71,10 +72,21 @@
 .avatar{
   height: 20px;
 }
-
-.carousel{
-  margin-left: 50px;
+.second-bar{
+  background-color: rgb(250, 250, 250);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin-top: 88px;
+  border-bottom: 1px solid rgb(238, 238, 238);
+  padding-left: 40px;
+  padding-right: 40px;
+  /* position: fixed; */
 }
+/* .carousel{
+  margin-left: 50px;
+  position: fixed;
+} */
 
 .footer{
   position: fixed;

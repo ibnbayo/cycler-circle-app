@@ -10,26 +10,22 @@ import VolkswagenIcon from './components/assets/volkswagen.svg'
 import AudiIcon from './components/assets/audi.svg'
 import FordIcon from './components/assets/ford.svg'
 import PeugeotIcon from './components/assets/peugeot.svg'
-import NissanIcon from './components/assets/nissan.svg'
 import HyundaiIcon from './components/assets/hyundai.svg'
 import OpelIcon from './components/assets/opel.svg'
 import FiatIcon from './components/assets/fiat.svg'
-
-
-
-
+import NissanIcon from './components/assets/nissan.svg'
 
 
 
 const images = [{
     id: 1,
-    src: MazdaIcon,
-    alt: "Mazda"
+    src: LamborghiniIcon,
+    alt: "Lamborghini"
 },
 {
     id: 2,
-    src: LamborghiniIcon,
-    alt: "Lamborghini "
+    src: MazdaIcon,
+    alt: "Mazda"
 },
 {
     id: 3,
@@ -95,6 +91,11 @@ const images = [{
     id: 15,
     src: FiatIcon,
     alt: "Fiat"
+},
+{
+    id: 16,
+    src: NissanIcon,
+    alt: "Nissan"
 },
 ];
 export default images

@@ -1,8 +1,10 @@
 .cars{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    margin-top: 100px;
+    margin-top: 150px;
     margin-bottom: 60px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 .car-wrap{
     margin-left: auto;
@@ -13,4 +15,14 @@
     border-radius: 5%;
     /* object-fit: cover;
     width: 22vw; */
+}
+.car-info{
+    display: flex;
+    justify-content: space-between;
+}
+.car-rating{
+    display: flex;
+}
+.car-star{
+    color: gold;
 }
