@@ -87,7 +87,13 @@
   margin-left: 50px;
   position: fixed;
 } */
+.no-search{
+  margin-left: 40vw;
+  position: absolute;
+  top: 100;
+  z-index: -1;
 
+}
 .footer{
   position: fixed;
   bottom: 0;

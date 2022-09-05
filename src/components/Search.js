@@ -8,7 +8,7 @@ function Search({play,setPlay}) {
         query = query.charAt(0).toUpperCase() + query.slice(1)
         console.log(query)
         setPlay(query)
-        
+
           
     }
     return (

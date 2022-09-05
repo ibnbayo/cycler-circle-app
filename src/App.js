@@ -5,6 +5,7 @@ import Cars from './components/Cars.js'
 // import ControlledCarousel from './components/ControlledCarousel'
 import images from "./images";
 import ImageSlider from "./imageSlider.js";
+import NoSearch from './components/NoSearch.js';
 import './App.css';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Header play={play} setPlay={setPlay}/>
       <ImageSlider images={images} play={play} setPlay={setPlay}/>
       <Cars  play={play} setPlay={setPlay}/>
+      <NoSearch />
       <Footer/>
     </div>
   );
