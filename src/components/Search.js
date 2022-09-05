@@ -4,8 +4,6 @@ function Search() {
     <div className="search">
         <input className="search-box" placeholder="Search items"/>
         <SearchIcon/>
-        
-
     </div>
     )
 }
