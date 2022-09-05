@@ -51,7 +51,7 @@ const ImageSlider = ({images, play, setPlay}) => {
 
 
   const changeCarSource = e => {
-    setPlay(e.currentTarget.alt.toLowerCase())
+    setPlay(e.currentTarget.alt)
   }
 
   // const buttonRef = useRef(null);

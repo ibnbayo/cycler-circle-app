@@ -5,12 +5,12 @@ import { BiMenu } from "react-icons/bi";
 
 
 
-function Header() {
+function Header({play,setPlay}) {
     return(
         <div className='header'>
             <img className="logo" src={logo} alt="logo" />
             <div className='header-middle'>
-            <Search/>
+            <Search play={play} setPlay={setPlay}/>
             </div>
             <div className='header-end'>
             <a className="wish-link" href="/">Fulfill a wish</a>

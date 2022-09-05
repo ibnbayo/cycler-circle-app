@@ -10,11 +10,11 @@ import './App.css';
 function App() {
   // const [carSource, setCarSource] = useState('https://www.cars-data.com/en/lamborghini')
   // console.log(carSource)
-  const [play, setPlay] = useState("lamborghini")
+  const [play, setPlay] = useState("Lamborghini")
 
   return (
     <div className="App">
-      <Header/>
+      <Header play={play} setPlay={setPlay}/>
       <ImageSlider images={images} play={play} setPlay={setPlay}/>
       <Cars  play={play} setPlay={setPlay}/>
       <Footer/>
