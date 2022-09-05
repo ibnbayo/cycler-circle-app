@@ -50,9 +50,8 @@ function Cars({play,setPlay}) {
     return(
         <div className="cars">
             {carz
-            
             .filter(car => car.title.includes(`${play}`) && !car.img.includes('no-image') && car.img.includes('_1'))
-            .slice(0,51)
+            .slice(0,63)
             .map(
                 (filteredCar) => {
                     return (
