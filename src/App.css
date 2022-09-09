@@ -14,6 +14,7 @@
   margin-left: 80px;
   height: 50px;
   border-radius: 99%;
+  cursor: pointer;
 }
 
 .search{
@@ -99,11 +100,14 @@
   bottom: 0;
   width: 100%;
   display: flex;
+  /* grid-template-columns: 1fr 1fr; */
   justify-content: center;
   border-top: 1px solid rgb(204, 204, 204);
   padding: 7px;
   background-color: rgb(240, 240, 240);
-  opacity: 1;
-  
+  opacity: 1; 
 }
+/* .footer > div{
 
+  margin-left: 75px;
+} */

@@ -1,4 +1,4 @@
-import {useState} from 'react'
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -34,8 +34,6 @@ function SamplePrevArrow(props) {
   
 const ImageSlider = ({images, play, setPlay}) => {
 
-  const data = "https://all-cars.p.rapidapi.com/cars/toyota"
-  // const [sliderRef, setSliderRef] = useState(null)
 
   const settings = {
     slidesToShow: 9,
@@ -47,7 +45,6 @@ const ImageSlider = ({images, play, setPlay}) => {
     dots: false,
   };
 
-  const [carType, setCarType] = useState("mazda")
 
 
   const changeCarSource = e => {

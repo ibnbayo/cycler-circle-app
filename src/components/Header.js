@@ -6,9 +6,13 @@ import { BiMenu } from "react-icons/bi";
 
 
 function Header({play,setPlay}) {
+    function setHomepage() {
+        setPlay("Lamborghini")
+
+    }
     return(
         <div className='header'>
-            <img className="logo" src={logo} alt="logo" />
+            <img className="logo" src={logo} alt="logo" onClick={setHomepage}/>
             <div className='header-middle'>
             <Search play={play} setPlay={setPlay}/>
             </div>

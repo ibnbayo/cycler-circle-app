@@ -60,19 +60,19 @@ function Cars({play,setPlay}) {
     }
     function setRating(filteredObj){
         let titleLength = Math.floor(filteredObj.title.length/237)
-        let imgLength = filteredObj.img.length
         let sourceLength = filteredObj.source.length
         let urlLength = filteredObj.url.length
-        let num = titleLength + sourceLength + urlLength
+        let num = Math.floor(titleLength + sourceLength + urlLength)
         if (filteredObj.img.includes("32")){
             num -= 37
         } else if (filteredObj.img.includes("9")){
             num += 16
         }
-        if (num>99){
-            num = 98
+        
+        (filteredObj.img.includes("6"))? num = (num/100)+3: num = (num/100)+4
+        if ( num>5 || num.toString().length>5){
+            num = 4.98
         }
-        num = (num*0.01)+4
         filteredObj['rating'] = num
         return filteredObj.rating
 
@@ -88,7 +88,7 @@ function Cars({play,setPlay}) {
                 (filteredCar) => {
                     return (
                 <div className="car-wrap" key={filteredCar.url/*carz.indexOf(car)*/}>
-                    <img className="car-img" src={`${filteredCar.img}`} alt="car"/>
+                    <img className="car-img" src={`${filteredCar.img}`} alt={`${filteredCar.title}`}/>
                     <div className="car-info">
                         <div className="car-details">
                             <div className="car-title">{filteredCar.title}</div>
