@@ -16,7 +16,11 @@
   border-radius: 99%;
   cursor: pointer;
 }
-
+@media only screen and (max-width: 600px) {
+  .logo{
+    display: none;
+  }
+}
 .search{
   display: flex;
 
@@ -40,6 +44,7 @@
   position: relative;
   top: -13px;
   right: 43px;
+  cursor: pointer;
   
 }
 
