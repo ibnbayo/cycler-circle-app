@@ -79,6 +79,9 @@ function Cars({play,setPlay}) {
     }
     // const [allCars, setAllCars] = useState([])
     // console.log(allCars)
+    function checkSearch(){
+
+    }
     return(
         <div className="cars">
             {carz
@@ -108,6 +111,7 @@ function Cars({play,setPlay}) {
                 </div>
                 )
                     })
+                
             }
         </div>
         

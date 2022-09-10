@@ -18,7 +18,8 @@ function Search({play,setPlay}) {
     <div className="search">
         <input className="search-box"
          placeholder="Search items"
-         onChange={handleSearch}/>
+         onChange={handleSearch}
+         onFocus/>
         <SearchIcon/>
     </div>
     )

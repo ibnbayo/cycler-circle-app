@@ -6,7 +6,6 @@ import Cars from './components/Cars.js'
 import images from "./images";
 import ImageSlider from "./imageSlider.js";
 import NoSearch from './components/NoSearch.js';
-import Modal from './components/Modal.js'
 // import Dialog from './components/Dialog.js'
 import './App.css';
 
@@ -20,7 +19,6 @@ function App() {
       <Header play={play} setPlay={setPlay}/>
       <ImageSlider images={images} play={play} setPlay={setPlay}/>
       <Cars  play={play} setPlay={setPlay}/>
-      <Modal />
       <NoSearch />
       {/* <Dialog /> */}
       <Footer/>

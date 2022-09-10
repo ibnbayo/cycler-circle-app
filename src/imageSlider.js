@@ -36,13 +36,28 @@ const ImageSlider = ({images, play, setPlay}) => {
 
 
   const settings = {
-    slidesToShow: 9,
-    slidesToScroll: 9,
+    slidesToShow: 8,
+    slidesToScroll: 4,
     infinite: false,
     // arrows: true,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     dots: false,
+    responsive: [
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 4,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 4,
+          
+        }
+      }
+    ]
   };
 
 
