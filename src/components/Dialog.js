@@ -13,7 +13,7 @@ import AddIcon from '@mui/icons-material/Add';
 import Typography from '@mui/material/Typography';
 import { blue } from '@mui/material/colors';
 
-const emails = ['username@gmail.com', 'user02@gmail.com'];
+const emails = ['Pound sterling', 'Indian rupee', 'Canadian dollar', 'Euro', 'Saudi Arabian riyal', 'Nigerian naira'];
 
 function SimpleDialog(props) {
   const { onClose, selectedValue, open } = props;
@@ -60,9 +60,9 @@ SimpleDialog.propTypes = {
   selectedValue: PropTypes.string.isRequired,
 };
 
-export default function SimpleDialogDemo() {
+export default function SimpleDialogDemo({selectedValue, setSelectedValue}) {
   const [open, setOpen] = React.useState(false);
-  const [selectedValue, setSelectedValue] = React.useState(emails[1]);
+  // const [selectedValue, setSelectedValue] = React.useState(emails[1]);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -78,7 +78,7 @@ export default function SimpleDialogDemo() {
       {/* <Typography variant="subtitle1" component="div">
         Selected: {selectedValue}
       </Typography> */}
-      <br />
+  
       <Button variant="outlined" onClick={handleClickOpen}>
         $ USD
       </Button>

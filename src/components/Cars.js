@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import {AiFillStar} from "react-icons/ai"
 
 
-function Cars({play,setPlay}) {
+function Cars({play, selectedValue}) {
 
     const [carz, setCarz] = useState([])
 
@@ -95,7 +95,7 @@ function Cars({play,setPlay}) {
                     <div className="car-info">
                         <div className="car-details">
                             <div className="car-title">{filteredCar.title}</div>
-                            <div className="car-price">${setPrice(filteredCar)}</div>
+                            <div className="car-price">{selectedValue}${setPrice(filteredCar)}</div>
                             {/* <div className="car-price">${Math.floor(100 + Math.random() * 900)}00</div> */}
 
                         </div>

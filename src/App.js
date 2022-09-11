@@ -13,15 +13,19 @@ function App() {
   // const [carSource, setCarSource] = useState('https://www.cars-data.com/en/lamborghini')
   // console.log(carSource)
   const [play, setPlay] = useState("Lamborghini")
+  const [currency, setCurrency] = useState("US Dollar")
+  const [selectedValue, setSelectedValue] = useState("Dollars");
+
+
 
   return (
     <div className="App">
       <Header play={play} setPlay={setPlay}/>
       <ImageSlider images={images} play={play} setPlay={setPlay}/>
-      <Cars  play={play} setPlay={setPlay}/>
+      <Cars  play={play} setPlay={setPlay} currency = {currency} selectedValue={selectedValue}/>
       <NoSearch />
       {/* <Dialog /> */}
-      <Footer/>
+      <Footer selectedValue={selectedValue} setSelectedValue={setSelectedValue}/>
 
     </div>
   );
