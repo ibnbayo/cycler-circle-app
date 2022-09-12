@@ -53,6 +53,7 @@
   text-decoration: none;
   position: relative;
   top: 17px;
+  visibility: hidden;
 }
 .menu-wrap{
   display: flex;
