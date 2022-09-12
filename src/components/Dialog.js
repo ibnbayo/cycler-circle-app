@@ -10,12 +10,9 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemText from '@mui/material/ListItemText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Dialog from '@mui/material/Dialog';
-import PersonIcon from '@mui/icons-material/Person';
-import AddIcon from '@mui/icons-material/Add';
-import Typography from '@mui/material/Typography';
 import { blue } from '@mui/material/colors';
 
-// const emails = ['Pound sterling', 'Indian rupee', 'Canadian dollar', 'Euro', 'Saudi Arabian riyal', 'Nigerian naira'];
+
 const emails = [
   {title: "Pound sterling", symbol: "£", id: 1, acronym: "GBP"},
   {title: "Euro", symbol: "€", id: 2, acronym: "EUR"},
@@ -34,7 +31,7 @@ function SimpleDialog(props) {
 
   const handleListItemClick = (value) => {
     onClose(value);
-    // const [currencyz, setCurrencyz] = useState({})
+
     
   };
 
@@ -71,14 +68,6 @@ function SimpleDialog(props) {
           </ListItem>
         ))}
 
-        <ListItem autoFocus button onClick={() => handleListItemClick('$')}>
-          <ListItemAvatar>
-            <Avatar>
-              <AddIcon />
-            </Avatar>
-          </ListItemAvatar>
-          <ListItemText primary="Add currency" />
-        </ListItem>
       </List>
     </Dialog>
   );
@@ -92,7 +81,6 @@ SimpleDialog.propTypes = {
 
 export default function SimpleDialogDemo({selectedValue, setSelectedValue}) {
   const [open, setOpen] = React.useState(false);
-  // const [selectedValue, setSelectedValue] = React.useState(emails[1]);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -102,15 +90,16 @@ export default function SimpleDialogDemo({selectedValue, setSelectedValue}) {
     setOpen(false);
     setSelectedValue(value);
   };
-
+ 
   return (
     <div>
-      {/* <Typography variant="subtitle1" component="div">
-        Selected: {selectedValue}
-      </Typography> */}
-  
-      <Button variant="outlined" onClick={handleClickOpen}>
-        $ USD
+      
+      <Button  variant="text" onClick={handleClickOpen} sx={{
+         ml: 30,
+         mb: 0,
+         p: 0,
+          }}>
+        {selectedValue} {emails.find(email => email.symbol===selectedValue).acronym}
       </Button>
       <SimpleDialog
         selectedValue={selectedValue}
