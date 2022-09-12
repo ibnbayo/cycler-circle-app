@@ -34,7 +34,6 @@ function Cars({play, selectedValue}) {
     
     console.log(carz)
     // console.log(carSource)
-
     // console.log(carz[0].source)
 
     // function checkCar(car){
@@ -43,7 +42,7 @@ function Cars({play, selectedValue}) {
     //     else
     //     return false
     // }
-    function setPrice(filteredObj){
+    function setPrice(filteredObj, selectedValue){
         let titleLength = Math.floor(filteredObj.title.length/237)
         let imgLength = filteredObj.img.length
         let sourceLength = filteredObj.source.length*2
@@ -55,6 +54,14 @@ function Cars({play, selectedValue}) {
             number += 992
         }
         number *= 100
+        console.log(selectedValue)
+        if (selectedValue === '$'){
+            number *=1
+        } else if (selectedValue === '€'){
+            number *=2
+        } else if (selectedValue === 'SR'){
+            number *=3
+        }
         filteredObj['price'] = number
         return filteredObj.price
     }
@@ -77,15 +84,14 @@ function Cars({play, selectedValue}) {
         return filteredObj.rating
 
     }
-    // const [allCars, setAllCars] = useState([])
-    // console.log(allCars)
-    function checkSearch(){
 
-    }
+    let filteredArray = carz.filter((car) => (car.title.includes(`${play}`)))
+
+    if (filteredArray.length>0) {
     return(
         <div className="cars">
-            {carz
-            .filter(car => car.title.includes(`${play}`) && !car.img.includes('no-image') && car.img.includes('_1'))
+            {filteredArray
+            .filter(car => !car.img.includes('no-image') && car.img.includes('_1'))
             .slice(0,27)
             .map(
                 (filteredCar) => {
@@ -95,7 +101,7 @@ function Cars({play, selectedValue}) {
                     <div className="car-info">
                         <div className="car-details">
                             <div className="car-title">{filteredCar.title}</div>
-                            <div className="car-price">{selectedValue}${setPrice(filteredCar)}</div>
+                            <div className="car-price">{selectedValue}{setPrice(filteredCar, selectedValue)}</div>
                             {/* <div className="car-price">${Math.floor(100 + Math.random() * 900)}00</div> */}
 
                         </div>
@@ -116,6 +122,13 @@ function Cars({play, selectedValue}) {
         </div>
         
     )
+        } else return(
+            <div className="no-show">
+                No items match your search terms
+            </div>
+                
+            )
+        
 }
 
 export default Cars 
