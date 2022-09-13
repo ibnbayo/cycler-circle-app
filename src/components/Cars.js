@@ -4,15 +4,17 @@ import axios from "axios"
 import './Cars.css'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Skeleton from '@mui/material/Skeleton'
 import {AiFillStar} from "react-icons/ai"
 
 
 function Cars({play, selectedValue}) {
 
     const [carz, setCarz] = useState([])
+    const [isLoading, setLoading] = useState(true)
 
     useEffect(() => {
-
+        // setLoading(true)
         const options = {
             method: 'GET',
             url: 'https://all-cars.p.rapidapi.com/cars/',
@@ -25,14 +27,15 @@ function Cars({play, selectedValue}) {
         axios.request(options)
         .then(response => {
             setCarz([...response.data])
-            console.log(response.data)
+            // console.log(response.data)
+            setLoading(false)
 
         }).catch(function (error) {
             console.error(error);
         })
     },[])
     
-    console.log(carz)
+    // console.log(carz)
     // console.log(carSource)
     // console.log(carz[0].source)
 
@@ -86,8 +89,13 @@ function Cars({play, selectedValue}) {
     }
 
     let filteredArray = carz.filter((car) => (car.title.includes(`${play}`)))
-
-    if (filteredArray.length>0) {
+    if (isLoading){
+        return(<Skeleton variant="rectangular" width={210} height={118} sx={{
+            mt: 30,
+            mx: 2,
+            borderRadius: 1,
+             }}/>)
+    } else if (filteredArray.length>0) {
     return(
         <div className="cars">
             {filteredArray
