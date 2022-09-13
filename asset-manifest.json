@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/cycler-circle-app/static/css/main.ba234182.css",
-    "main.js": "/cycler-circle-app/static/js/main.04ce4d46.js",
+    "main.js": "/cycler-circle-app/static/js/main.c152583c.js",
     "static/media/logo.svg": "/cycler-circle-app/static/media/logo.f0d139fdd255b3f14db1c0b2c62ba69d.svg",
     "static/media/porsche.svg": "/cycler-circle-app/static/media/porsche.0a09872fd3b9419f0101e9b45eaa25fd.svg",
     "static/media/ferrari.svg": "/cycler-circle-app/static/media/ferrari.4a5437f84cc05cb4e4351a4a107ba010.svg",
@@ -25,10 +25,10 @@
     "index.html": "/cycler-circle-app/index.html",
     "static/media/renault.svg": "/cycler-circle-app/static/media/renault.2c2a6d7ee018a06f724894971bc72ad0.svg",
     "main.ba234182.css.map": "/cycler-circle-app/static/css/main.ba234182.css.map",
-    "main.04ce4d46.js.map": "/cycler-circle-app/static/js/main.04ce4d46.js.map"
+    "main.c152583c.js.map": "/cycler-circle-app/static/js/main.c152583c.js.map"
   },
   "entrypoints": [
     "static/css/main.ba234182.css",
-    "static/js/main.04ce4d46.js"
+    "static/js/main.c152583c.js"
   ]
 }
