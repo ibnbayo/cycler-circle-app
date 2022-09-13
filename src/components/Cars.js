@@ -90,10 +90,10 @@ function Cars({play, selectedValue}) {
 
     let filteredArray = carz.filter((car) => (car.title.includes(`${play}`)))
     if (isLoading){
-        return(<Skeleton variant="rectangular" width={210} height={118} sx={{
+        return(<Skeleton variant="rectangular" width={310} height={218} sx={{
             mt: 30,
-            mx: 2,
-            borderRadius: 1,
+            mx: "auto",
+            borderRadius: 3,
              }}/>)
     } else if (filteredArray.length>0) {
     return(
