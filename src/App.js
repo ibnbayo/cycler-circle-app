@@ -12,14 +12,20 @@ function App() {
   // const [carSource, setCarSource] = useState('https://www.cars-data.com/en/lamborghini')
   // console.log(carSource)
   const [play, setPlay] = useState("Lamborghini")
-  const [selectedValue, setSelectedValue] = useState("$");
+  const [selectedValue, setSelectedValue] = useState({title: "United States dollar", symbol: "$", id: 6, acronym: "USD"});
+  const [currencyData,setCurrencyData] = useState({})
   
   return (
     <div className="App">
       <Header play={play} setPlay={setPlay}/>
       <ImageSlider images={images} play={play} setPlay={setPlay}/>
-      <Cars  play={play} setPlay={setPlay} selectedValue={selectedValue}/>
-      <Footer selectedValue={selectedValue} setSelectedValue={setSelectedValue}/>
+      <Cars  play={play} setPlay={setPlay} selectedValue={selectedValue} currencyData={currencyData}/>
+      <Footer
+       selectedValue={selectedValue}
+       setSelectedValue={setSelectedValue}
+       currencyData={currencyData}
+       setCurrencyData={setCurrencyData}
+       />
 
     </div>
   );

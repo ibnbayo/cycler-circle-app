@@ -8,7 +8,7 @@ import Skeleton from '@mui/material/Skeleton'
 import {AiFillStar} from "react-icons/ai"
 
 
-function Cars({play, selectedValue}) {
+function Cars({play, selectedValue, currencyData}) {
 
     const [carz, setCarz] = useState([])
     const [isLoading, setLoading] = useState(true)
@@ -57,14 +57,14 @@ function Cars({play, selectedValue}) {
             number += 992
         }
         number *= 100
-        console.log(selectedValue)
-        if (selectedValue === '$'){
-            number *=1
-        } else if (selectedValue === '€'){
-            number *=2
-        } else if (selectedValue === 'SR'){
-            number *=3
-        }
+        
+        // console.log(Object.keys(currencyData.rates).find(abbrev => abbrev===`${selectedValue.acronym}`))
+        let exrate = currencyData.rates[`${selectedValue.acronym}`]
+        number *= exrate
+        number = Math.round(number)
+        // number *= abbrev
+        console.log(selectedValue.acronym)
+     
         filteredObj['price'] = number
         return filteredObj.price
     }
@@ -109,7 +109,7 @@ function Cars({play, selectedValue}) {
                     <div className="car-info">
                         <div className="car-details">
                             <div className="car-title">{filteredCar.title}</div>
-                            <div className="car-price">{selectedValue}{setPrice(filteredCar, selectedValue)}</div>
+                            <div className="car-price">{selectedValue.symbol}{setPrice(filteredCar, selectedValue)}</div>
                             {/* <div className="car-price">${Math.floor(100 + Math.random() * 900)}00</div> */}
 
                         </div>

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useEffect } from "react"
+import { useState, useEffect } from "react"
 import axios from "axios"
 import PropTypes from 'prop-types';
 import Button from '@mui/material/Button';
@@ -20,6 +20,7 @@ const emails = [
   {title: "Saudi Arabian riyal", symbol: "SR", id: 4, acronym: "SAR"},
   {title: "Indian rupee", symbol: "₹", id: 5, acronym: "INR"},
   {title: "United States dollar", symbol: "$", id: 6, acronym: "USD"},
+  {title: "Bee Bee Dee", symbol: "*", id: 7, acronym: "BBD"},
 
 ]
 function SimpleDialog(props) {
@@ -35,30 +36,14 @@ function SimpleDialog(props) {
     
   };
 
-  useEffect(() => {
-    const options = {
-      method: 'GET',
-      url: 'https://exchangerate-api.p.rapidapi.com/rapid/latest/USD',
-      headers: {
-        'X-RapidAPI-Key': 'c0d2e70417msh3bde3b7dbe9e25ap12748ejsncd1fe394742c',
-        'X-RapidAPI-Host': 'exchangerate-api.p.rapidapi.com'
-      }
-    };
-    
-    axios.request(options).then(function (response) {
-      console.log(response.data);
-    }).catch(function (error) {
-      console.error(error);
-    });
-
-  },[])
 
   return (
     <Dialog onClose={handleClose} open={open}>
       <DialogTitle>Choose a currency</DialogTitle>
       <List sx={{ pt: 0 }}>
         {emails.map((email) => (
-          <ListItem button onClick={() => handleListItemClick(email.symbol)} key={email.id}>
+          // <ListItem button onClick={() => handleListItemClick(email.symbol)} key={email.id}>
+          <ListItem button onClick={() => handleListItemClick(email)} key={email.id}>
             <ListItemAvatar>
               <Avatar sx={{ bgcolor: blue[100], color: blue[600] }}>
                 {email.symbol}
@@ -79,11 +64,49 @@ SimpleDialog.propTypes = {
   selectedValue: PropTypes.string.isRequired,
 };
 
-export default function SimpleDialogDemo({selectedValue, setSelectedValue}) {
+export default function SimpleDialogDemo({selectedValue, setSelectedValue, currencyData, setCurrencyData}) {
+
+  // const [currencyData,setCurrencyData] = useState({})
+
+  const makeAPICall = (options) => {
+    
+    // const options = {
+    //   method: 'GET',
+    //   url: 'https://exchangerate-api.p.rapidapi.com/rapid/latest/USD',
+    //   headers: {
+    //     'X-RapidAPI-Key': 'c0d2e70417msh3bde3b7dbe9e25ap12748ejsncd1fe394742c',
+    //     'X-RapidAPI-Host': 'exchangerate-api.p.rapidapi.com'
+    //   }
+    // };
+    
+    axios.request(options)
+    .then(response => {
+      setCurrencyData(response.data)
+    }).catch(function (error) {
+      console.error(error);
+    });
+  }
+  console.log(currencyData)
+
+  // useEffect(() => {
+  //   makeAPICall();
+
+  // },[])
+
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
+    if (Object.keys(currencyData).length===0){ 
+      makeAPICall({
+        method: 'GET',
+        url: 'https://exchangerate-api.p.rapidapi.com/rapid/latest/USD',
+        headers: {
+          'X-RapidAPI-Key': 'c0d2e70417msh3bde3b7dbe9e25ap12748ejsncd1fe394742c',
+          'X-RapidAPI-Host': 'exchangerate-api.p.rapidapi.com'
+        }
+      }); 
+    }
   };
 
   const handleClose = (value) => {
@@ -99,7 +122,8 @@ export default function SimpleDialogDemo({selectedValue, setSelectedValue}) {
          mb: 0,
          p: 0,
           }}>
-        {selectedValue} {emails.find(email => email.symbol===selectedValue).acronym}
+        {/* {selectedValue} {emails.find(email => email.symbol===selectedValue).acronym} */}
+        {selectedValue.symbol} {selectedValue.acronym}
       </Button>
       <SimpleDialog
         selectedValue={selectedValue}
