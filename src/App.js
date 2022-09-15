@@ -19,7 +19,7 @@ function App() {
     <div className="App">
       <Header play={play} setPlay={setPlay}/>
       <ImageSlider images={images} play={play} setPlay={setPlay}/>
-      <Cars  play={play} setPlay={setPlay} selectedValue={selectedValue} currencyData={currencyData}/>
+      {/* <Cars  play={play} setPlay={setPlay} selectedValue={selectedValue} currencyData={currencyData}/> */}
       <Footer
        selectedValue={selectedValue}
        setSelectedValue={setSelectedValue}

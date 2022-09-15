@@ -1,5 +1,5 @@
 {
-  "homepage": "http://ibnbayo.github.io/cycler-circle-app", 
+  "homepage": "http://ibnbayo.github.io/cycler-circle-app",
   "name": "cycler-circle-app",
   "version": "0.1.0",
   "private": true,
@@ -15,6 +15,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
     "bootstrap": "^5.2.0",
+    "netlify-cli": "^11.7.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
     "react-dom": "^18.2.0",
