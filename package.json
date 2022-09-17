@@ -1,5 +1,5 @@
 {
-  "homepage": "http://ibnbayo.github.io/cycler-circle-app", 
+  "homepage": "http://ibnbayo.github.io/cycler-circle-app",
   "name": "cycler-circle-app",
   "version": "0.1.0",
   "private": true,
@@ -18,7 +18,9 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
     "react-dom": "^18.2.0",
+    "react-favicon": "^1.0.1",
     "react-icons": "^4.4.0",
+    "react-router-dom": "^6.4.0",
     "react-scripts": "5.0.1",
     "react-slick": "^0.29.0",
     "reactjs-popup": "^2.0.5",

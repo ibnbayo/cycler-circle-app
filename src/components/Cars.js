@@ -103,8 +103,8 @@ function Cars({play, selectedValue, currencyData}) {
             .slice(0,27)
             .map(
                 (filteredCar) => {
-                    return (
-                <div className="car-wrap" key={filteredCar.url/*carz.indexOf(car)*/}>
+                return (
+                <a href="/no-search" className="car-wrap" key={filteredCar.url/*carz.indexOf(car)*/}>
                     <img className="car-img" src={`${filteredCar.img}`} alt={`${filteredCar.title}`}/>
                     <div className="car-info">
                         <div className="car-details">
@@ -122,7 +122,7 @@ function Cars({play, selectedValue, currencyData}) {
                     </div>
                     {/* <div className="monthly-price">${Math.floor(100 + Math.random() * 900)}/Month Est.</div>
                     <div className="cash-down">${Math.floor(1+Math.random()*5)}000 Cash Down</div> */}
-                </div>
+                </a>
                 )
                     })
                 

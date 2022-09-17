@@ -18,6 +18,7 @@ function Header({play,setPlay}) {
             </div>
             <div className='header-end'>
             <a className="wish-link" href="/">Fulfill a wish</a>
+            {/* <a className="test-link" href="/carousel">Fulfill a wish</a> */}
             <div className='menu-wrap'>
             <div className='menu'>
             <BiMenu/>
