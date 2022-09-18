@@ -19,27 +19,36 @@ function App() {
   const [play, setPlay] = useState("Lamborghini")
   const [selectedValue, setSelectedValue] = useState({title: "United States dollar", symbol: "$", id: 6, acronym: "USD"});
   const [currencyData,setCurrencyData] = useState({"rates": {"USD": 1}})
-  
+  const [clickedVehicle, setClickedVehicle] = useState({})
+    // img: "https://www.cars-data.com/pictures/thumbs/350px/mazda/mazda-mx-30_4576_1.jpg",
+    // source: "https://www.cars-data.com/en/mazda",
+    // title: "Mazda MX-30", 
+    // url: "https://www.cars-data.com/en/mazda/mx-30",})
+  console.log(clickedVehicle)
   return (
     <div className="App">
       <Favicon url={logo}></Favicon>
       <Header play={play} setPlay={setPlay}/>
+      {/* <Router> */}
       <Routes>
         <Route path='/'
           element={<>
-            <ImageSlider images={images} play={play} setPlay={setPlay} authed={true}/>
-            <Cars  play={play} setPlay={setPlay} selectedValue={selectedValue} currencyData={currencyData} authed={true}/>
+            <ImageSlider images={images} play={play} setPlay={setPlay} />
+            <Cars  play={play} setPlay={setPlay} selectedValue={selectedValue} 
+              currencyData={currencyData}
+              setClickedVehicle={setClickedVehicle}/>
           </>}/>
-        <Route path='/no-search' element={<NoSearch/>}/>
+        <Route path = "/big" element={<ClickedCar clickedVehicle={clickedVehicle}/>}/>
       </Routes>
+      {/* </Router> */}
       {/* <ImageSlider images={images} play={play} setPlay={setPlay}/>
       <Cars  play={play} setPlay={setPlay} selectedValue={selectedValue} currencyData={currencyData}/> */}
-      <Footer
+      {/* <Footer
        selectedValue={selectedValue}
        setSelectedValue={setSelectedValue}
        currencyData={currencyData}
        setCurrencyData={setCurrencyData}
-       />
+       /> */}
 
     </div>
   );

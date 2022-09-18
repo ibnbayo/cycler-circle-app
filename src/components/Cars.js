@@ -8,7 +8,7 @@ import Skeleton from '@mui/material/Skeleton'
 import {AiFillStar} from "react-icons/ai"
 
 
-function Cars({play, selectedValue, currencyData}) {
+function Cars({play, selectedValue, currencyData, setClickedVehicle}) {
 
     const [carz, setCarz] = useState([])
     const [isLoading, setLoading] = useState(true)
@@ -34,7 +34,7 @@ function Cars({play, selectedValue, currencyData}) {
             console.error(error);
         })
     },[])
-    
+    console.log(play)
     // console.log(carz)
     // console.log(carSource)
     // console.log(carz[0].source)
@@ -88,6 +88,36 @@ function Cars({play, selectedValue, currencyData}) {
 
     }
 
+    const handleClick = e => {
+        let clickedDiv = e.currentTarget.children
+        let clickedTitle = clickedDiv[0].alt
+        let clickedImage = clickedDiv[0].src
+        let clickedPrice = clickedDiv[1].children[0].children[1].textContent
+        let clickedRating = clickedDiv[1].children[1].children[1].textContent
+        console.log(clickedTitle, clickedImage, clickedPrice, clickedRating);
+        let clickedObj = {
+            "title": clickedTitle,
+            "img": clickedImage,
+            "price": clickedPrice,
+            "rating": clickedRating,
+        }
+        console.log(clickedObj)
+        setClickedVehicle(clickedObj)
+        // let myObj = {
+        //     "title": 
+        // }
+      };
+    
+      function handleCar(filteredObj){
+        console.log(filteredObj.title)
+
+      }
+    // const handleCarClick = (filteredObj) => {
+    //     setClickedVehicle(filteredObj)
+    //     console.log(filteredObj)
+    // }
+    // console.log(clickedVehicle)
+
     let filteredArray = carz.filter((car) => (car.title.includes(`${play}`)))
     if (isLoading){
         return(<Skeleton variant="rectangular" width={310} height={218} sx={{
@@ -104,7 +134,7 @@ function Cars({play, selectedValue, currencyData}) {
             .map(
                 (filteredCar) => {
                 return (
-                <a href="/no-search" className="car-wrap" key={filteredCar.url/*carz.indexOf(car)*/}>
+                <a href="/big" target="_blank" rel="noreferrer" className="car-wrap" key={filteredCar.url} onClick={handleClick}>
                     <img className="car-img" src={`${filteredCar.img}`} alt={`${filteredCar.title}`}/>
                     <div className="car-info">
                         <div className="car-details">
