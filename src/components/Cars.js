@@ -134,7 +134,7 @@ function Cars({play, selectedValue, currencyData, setClickedVehicle}) {
             .map(
                 (filteredCar) => {
                 return (
-                <a href="/big" target="_blank" rel="noreferrer" className="car-wrap" key={filteredCar.url} onClick={handleClick}>
+                <a href="/big" /*target="_blank" rel="noreferrer"*/ className="car-wrap" key={filteredCar.url} onClick={handleClick}>
                     <img className="car-img" src={`${filteredCar.img}`} alt={`${filteredCar.title}`}/>
                     <div className="car-info">
                         <div className="car-details">

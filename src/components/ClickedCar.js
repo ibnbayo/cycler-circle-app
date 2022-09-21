@@ -1,10 +1,13 @@
 import React from 'react'
-import {useEffect} from 'react'
+import {useContext} from 'react'
+import ClickedCarContext from './ClickedCarContext.js'
+
 import './assets/ClickedCar.css'
 
-function ClickedCar({clickedVehicle}){
+function ClickedCar(){
 
-    console.log(clickedVehicle)
+    const bk = useContext(ClickedCarContext)
+    console.log(bk)
 
   return (
     <div className='clicked-car'>
