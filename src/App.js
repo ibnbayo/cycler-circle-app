@@ -40,9 +40,10 @@ function App() {
             <ImageSlider images={images} play={play} setPlay={setPlay} />
             <Cars  play={play} setPlay={setPlay} selectedValue={selectedValue} 
               currencyData={currencyData}
+              clickedVehicle={clickedVehicle}
               setClickedVehicle={setClickedVehicle}/>
           </>}/>
-        <Route path = "/:big" element={<ClickedCar/>}/>
+        <Route path = "/big" element={<ClickedCar clickedVehicle={clickedVehicle} />}/>
       </Routes>
       </BrowserRouter>
       {/* </ClickedCarProvider> */}

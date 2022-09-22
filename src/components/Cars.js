@@ -1,6 +1,7 @@
 import {useState, useEffect} from "react"
 // import Slider from 'react-slick';
 import axios from "axios"
+import { Link } from "react-router-dom";
 import './Cars.css'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -8,7 +9,7 @@ import Skeleton from '@mui/material/Skeleton'
 import {AiFillStar} from "react-icons/ai"
 
 
-function Cars({play, selectedValue, currencyData, setClickedVehicle}) {
+function Cars({play, selectedValue, currencyData, clickedVehicle, setClickedVehicle}) {
 
     const [carz, setCarz] = useState([])
     const [isLoading, setLoading] = useState(true)
@@ -134,7 +135,8 @@ function Cars({play, selectedValue, currencyData, setClickedVehicle}) {
             .map(
                 (filteredCar) => {
                 return (
-                <a href="/big" /*target="_blank" rel="noreferrer"*/ className="car-wrap" key={filteredCar.url} onClick={handleClick}>
+                <Link to='/big' state={clickedVehicle}>
+                <div /*target="_blank" rel="noreferrer"*/ className="car-wrap" key={filteredCar.url} onClick={handleClick}>
                     <img className="car-img" src={`${filteredCar.img}`} alt={`${filteredCar.title}`}/>
                     <div className="car-info">
                         <div className="car-details">
@@ -152,7 +154,8 @@ function Cars({play, selectedValue, currencyData, setClickedVehicle}) {
                     </div>
                     {/* <div className="monthly-price">${Math.floor(100 + Math.random() * 900)}/Month Est.</div>
                     <div className="cash-down">${Math.floor(1+Math.random()*5)}000 Cash Down</div> */}
-                </a>
+                </div>
+                </Link>
                 )
                     })
                 

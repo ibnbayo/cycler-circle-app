@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from './assets/logo.svg';
 import Search from './Search.js'
 import Avatar from '@mui/material/Avatar';
@@ -12,7 +13,9 @@ function Header({play,setPlay}) {
     }
     return(
         <div className='header'>
+            {/* <Link to='/'> */}
             <img className="logo" src={logo} alt="logo" onClick={setHomepage}/>
+            {/* </Link> */}
             <div className='header-middle'>
             <Search play={play} setPlay={setPlay}/>
             </div>
