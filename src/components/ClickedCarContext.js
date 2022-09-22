@@ -9,4 +9,5 @@ export function ClickedCarProvider({children}){
         {children}
     </ClickedCarContext.Provider>)
 }
+
 export default ClickedCarContext;

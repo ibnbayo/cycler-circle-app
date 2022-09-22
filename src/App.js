@@ -10,7 +10,8 @@ import NoSearch from './components/NoSearch'
 import images from "./images";
 import ImageSlider from "./imageSlider.js";
 import ClickedCar from './components/ClickedCar.js'
-import { ClickedCarProvider } from './components/ClickedCarContext.js';
+import { Link } from "react-router-dom";
+// import { ClickedCarProvider } from './components/ClickedCarContext.js';
 // import Dialog from './components/Dialog.js'
 import './App.css';
 
@@ -31,7 +32,7 @@ function App() {
       <Favicon url={logo}></Favicon>
       <Header play={play} setPlay={setPlay}/>
       {/* <Router> */}
-      <ClickedCarProvider>
+      {/* <ClickedCarProvider> */}
       <BrowserRouter>
       <Routes>
         <Route path='/'
@@ -41,10 +42,10 @@ function App() {
               currencyData={currencyData}
               setClickedVehicle={setClickedVehicle}/>
           </>}/>
-        <Route path = "/big" element={<ClickedCar/>}/>
+        <Route path = "/:big" element={<ClickedCar/>}/>
       </Routes>
       </BrowserRouter>
-      </ClickedCarProvider>
+      {/* </ClickedCarProvider> */}
       {/* </Router> */}
       {/* <ImageSlider images={images} play={play} setPlay={setPlay}/>
       <Cars  play={play} setPlay={setPlay} selectedValue={selectedValue} currencyData={currencyData}/> */}
