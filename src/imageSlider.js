@@ -64,7 +64,13 @@ const ImageSlider = ({images, play, setPlay}) => {
 
 
   const changeCarSource = e => {
-    setPlay(e.currentTarget.alt)
+    let pickedIcon = e.target.alt
+    console.log(pickedIcon)
+    if (pickedIcon === undefined) {
+      pickedIcon = e.target.textContent
+    }
+    console.log(pickedIcon)
+    setPlay(pickedIcon)
   }
 
   // const buttonRef = useRef(null);
@@ -87,20 +93,20 @@ const ImageSlider = ({images, play, setPlay}) => {
         <Slider {...settings}>
           
           {images.map((item) => (
-            <div className='car-icon'
+            <div className='car-icon hover:scale-90' onClick={changeCarSource}
              
              key={item.id}>
 
               <img src={item.src}
                 alt={item.alt}
-                onClick={changeCarSource}
+                // onClick={changeCarSource}
                  className='car-icon-img fill-blue-700 visible mx-auto'/>
 
               {/* <div onClick={changeCarSource} className='car-icon-img fill-blue-700 visible mx-auto'>
                 {item.src} 
                  </div> */}
 
-              <div className='car-icon-text pl-2 font-light'>{item.alt}</div>
+              <div className='car-icon-text pl-2 font-light cursor-pointer'>{item.alt}</div>
               
             </div>
           ))}

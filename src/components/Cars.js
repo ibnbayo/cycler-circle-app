@@ -151,7 +151,7 @@ function Cars({play, selectedValue, currencyData, clickedVehicle, setClickedVehi
                         </div>
                         <div className="car-rating">
                             <div className="car-star"><AiFillStar /></div>
-                            <div className="star-rating font-extralight">{setRating(filteredCar)}</div>
+                            <div className="star-rating text-sm">{setRating(filteredCar)}</div>
                             {/* <div className="star-rating">{Math.floor(400 + Math.random() * 100)/100}</div> */}
 
                         </div>
