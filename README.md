@@ -42,6 +42,7 @@ From the repo:<br/>
   - Run npm start<br/>
 
 ## To Do
+- Filter by user determined metrics
 - Connect to a payment provider API
 - Wishlist feature
 - Authentication
