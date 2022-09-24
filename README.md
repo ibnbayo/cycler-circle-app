@@ -10,7 +10,7 @@ LIVE LINK: [https://ibnbayo.github.io/cycler-circle-app/]
 ## Features
 - Search from over 1500 vehicles
 - Currency converter
-- Icon slider for seleting vehicle categories
+- Icon slider for selecting vehicle categories
 - State management across multiple routes
 - Skeleton UI while API data is fetched
 - Modal 
