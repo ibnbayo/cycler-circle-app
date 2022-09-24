@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/cycler-circle-app/static/css/main.c0a69008.css",
-    "main.js": "/cycler-circle-app/static/js/main.7fc1c3a9.js",
+    "main.css": "/cycler-circle-app/static/css/main.576112dd.css",
+    "main.js": "/cycler-circle-app/static/js/main.5e2d2dee.js",
     "static/media/logo.svg": "/cycler-circle-app/static/media/logo.f0d139fdd255b3f14db1c0b2c62ba69d.svg",
     "static/media/porsche.svg": "/cycler-circle-app/static/media/porsche.0a09872fd3b9419f0101e9b45eaa25fd.svg",
     "static/media/ferrari.svg": "/cycler-circle-app/static/media/ferrari.4a5437f84cc05cb4e4351a4a107ba010.svg",
@@ -24,11 +24,11 @@
     "static/media/opel.svg": "/cycler-circle-app/static/media/opel.4362263e565e8e42af92facbb5661fd3.svg",
     "index.html": "/cycler-circle-app/index.html",
     "static/media/renault.svg": "/cycler-circle-app/static/media/renault.2c2a6d7ee018a06f724894971bc72ad0.svg",
-    "main.c0a69008.css.map": "/cycler-circle-app/static/css/main.c0a69008.css.map",
-    "main.7fc1c3a9.js.map": "/cycler-circle-app/static/js/main.7fc1c3a9.js.map"
+    "main.576112dd.css.map": "/cycler-circle-app/static/css/main.576112dd.css.map",
+    "main.5e2d2dee.js.map": "/cycler-circle-app/static/js/main.5e2d2dee.js.map"
   },
   "entrypoints": [
-    "static/css/main.c0a69008.css",
-    "static/js/main.7fc1c3a9.js"
+    "static/css/main.576112dd.css",
+    "static/js/main.5e2d2dee.js"
   ]
 }
