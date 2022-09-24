@@ -20,7 +20,6 @@ const emails = [
   {title: "Saudi Arabian riyal", symbol: "SR", id: 4, acronym: "SAR"},
   {title: "Indian rupee", symbol: "₹", id: 5, acronym: "INR"},
   {title: "United States dollar", symbol: "$", id: 6, acronym: "USD"},
-  {title: "Bee Bee Dee", symbol: "*", id: 7, acronym: "BBD"},
 
 ]
 function SimpleDialog(props) {

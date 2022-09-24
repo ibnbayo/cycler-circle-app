@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import logo from './components/assets/logo.svg';
 import Favicon from 'react-favicon'
 import Header from './components/Header.js'
@@ -33,7 +33,7 @@ function App() {
       {/* <Header play={play} setPlay={setPlay}/> */}
       {/* <Router> */}
       {/* <ClickedCarProvider> */}
-      <BrowserRouter>
+      <HashRouter basename='/'>
       <Routes>
         <Route path='/'
           element={<>
@@ -54,7 +54,7 @@ function App() {
             <Header play={play} setPlay={setPlay}/>
             <ClickedCar clickedVehicle={clickedVehicle} /></>}/>
       </Routes>
-      </BrowserRouter>
+      </HashRouter>
       {/* </ClickedCarProvider> */}
       {/* </Router> */}
       {/* <ImageSlider images={images} play={play} setPlay={setPlay}/>
