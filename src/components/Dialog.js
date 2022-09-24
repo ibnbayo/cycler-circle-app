@@ -97,7 +97,7 @@ export default function SimpleDialogDemo({selectedValue, setSelectedValue, curre
 
   const handleClickOpen = () => {
     setOpen(true);
-    if (Object.keys(currencyData).length===0){ 
+    if (Object.keys(currencyData.rates).length<2){ 
       makeAPICall({
         method: 'GET',
         url: 'https://exchangerate-api.p.rapidapi.com/rapid/latest/USD',

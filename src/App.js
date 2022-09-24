@@ -30,32 +30,36 @@ function App() {
   return (
     <div className="App">
       <Favicon url={logo}></Favicon>
-      <Header play={play} setPlay={setPlay}/>
+      {/* <Header play={play} setPlay={setPlay}/> */}
       {/* <Router> */}
       {/* <ClickedCarProvider> */}
       <BrowserRouter>
       <Routes>
         <Route path='/'
           element={<>
+            <Header play={play} setPlay={setPlay}/>
             <ImageSlider images={images} play={play} setPlay={setPlay} />
             <Cars  play={play} setPlay={setPlay} selectedValue={selectedValue} 
               currencyData={currencyData}
               clickedVehicle={clickedVehicle}
               setClickedVehicle={setClickedVehicle}/>
+            <Footer
+              selectedValue={selectedValue}
+              setSelectedValue={setSelectedValue}
+              currencyData={currencyData}
+              setCurrencyData={setCurrencyData}
+            />
           </>}/>
-        <Route path = "/big" element={<ClickedCar clickedVehicle={clickedVehicle} />}/>
+        <Route path = {`/${clickedVehicle.title}`} element={<>
+            <Header play={play} setPlay={setPlay}/>
+            <ClickedCar clickedVehicle={clickedVehicle} /></>}/>
       </Routes>
       </BrowserRouter>
       {/* </ClickedCarProvider> */}
       {/* </Router> */}
       {/* <ImageSlider images={images} play={play} setPlay={setPlay}/>
       <Cars  play={play} setPlay={setPlay} selectedValue={selectedValue} currencyData={currencyData}/> */}
-      {/* <Footer
-       selectedValue={selectedValue}
-       setSelectedValue={setSelectedValue}
-       currencyData={currencyData}
-       setCurrencyData={setCurrencyData}
-       /> */}
+      
 
     </div>
   );

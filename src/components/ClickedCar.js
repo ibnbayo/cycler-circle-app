@@ -27,17 +27,21 @@ const ClickedCar = (props) => {
 
   return (
     <>
-      <h1>This is ClickedCar page</h1>
-      {state && (
-        <div>
-          <h3>Passed data:</h3>
-          <p>Za title: {props.clickedVehicle.title}</p>
-          <p>Le image: {props.clickedVehicle.img}</p>
-          <p>La source: {props.clickedVehicle.source}</p>
+      {/* <h1></h1> */}
+      { state && (
+        <div className='mt-24 mx-20'>
+         
+          {/* <h3>.</h3> */}
+          <p className='mx-auto'>Vehicle Make: {props.clickedVehicle.title}</p>
+          <div><img src={props.clickedVehicle.img} alt='clicked car' className='rounded-md'/></div>
+          {/* <p>La source: {props.clickedVehicle.rating}</p> */}
+          <p>Price: {props.clickedVehicle.price}</p>
+          <p className=''>Rating: {props.clickedVehicle.rating}</p>
+        
         </div>
       )}
       <hr />
-      <Link to="/">Go Home</Link>
+      <Link to="/"><div className='mt-5 mx-20 border-sky-400'>Go to Homepage</div></Link>
     </>
   );
 };

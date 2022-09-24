@@ -1,7 +1,7 @@
 import {useState, useEffect} from "react"
 // import Slider from 'react-slick';
 import axios from "axios"
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import './Cars.css'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -60,8 +60,12 @@ function Cars({play, selectedValue, currencyData, clickedVehicle, setClickedVehi
         number *= 100
         
         // console.log(Object.keys(currencyData.rates).find(abbrev => abbrev===`${selectedValue.acronym}`))
+        // const hasKey = currencyData.rates.hasOwnProperty(`${selectedValue.acronym}`)
+        // let exrate = "1"
+        // (hasKey)? (exrate = currencyData.rates[`${selectedValue.acronym}`]): (exrate = currencyData.rates.USD) 
         let exrate = currencyData.rates[`${selectedValue.acronym}`]
         number *= exrate
+        // (exrate.isNan())? number=number : number *= exrate
         number = Math.round(number)
         // number *= abbrev
         console.log(selectedValue.acronym)
@@ -135,19 +139,19 @@ function Cars({play, selectedValue, currencyData, clickedVehicle, setClickedVehi
             .map(
                 (filteredCar) => {
                 return (
-                <Link to='/big' state={clickedVehicle}>
-                <div /*target="_blank" rel="noreferrer"*/ className="car-wrap" key={filteredCar.url} onClick={handleClick}>
+                <NavLink to={`/${filteredCar.title}`} className="car-wrap" state={clickedVehicle} /*style={{ textDecoration: 'none' }}*/>
+                <div /*target="_blank" rel="noreferrer"*/  key={filteredCar.url} onClick={handleClick}>
                     <img className="car-img" src={`${filteredCar.img}`} alt={`${filteredCar.title}`}/>
-                    <div className="car-info">
+                    <div className="car-info pt-2">
                         <div className="car-details">
                             <div className="car-title">{filteredCar.title}</div>
-                            <div className="car-price">{selectedValue.symbol}{setPrice(filteredCar, selectedValue)}</div>
+                            <div className="car-price font-light">{selectedValue.symbol}{setPrice(filteredCar, selectedValue)}</div>
                             {/* <div className="car-price">${Math.floor(100 + Math.random() * 900)}00</div> */}
 
                         </div>
                         <div className="car-rating">
                             <div className="car-star"><AiFillStar /></div>
-                            <div className="star-rating">{setRating(filteredCar)}</div>
+                            <div className="star-rating font-extralight">{setRating(filteredCar)}</div>
                             {/* <div className="star-rating">{Math.floor(400 + Math.random() * 100)/100}</div> */}
 
                         </div>
@@ -155,7 +159,7 @@ function Cars({play, selectedValue, currencyData, clickedVehicle, setClickedVehi
                     {/* <div className="monthly-price">${Math.floor(100 + Math.random() * 900)}/Month Est.</div>
                     <div className="cash-down">${Math.floor(1+Math.random()*5)}000 Cash Down</div> */}
                 </div>
-                </Link>
+                </NavLink>
                 )
                     })
                 

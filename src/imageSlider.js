@@ -2,6 +2,7 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import {BsFilter} from 'react-icons/bs'
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
 import "./style.css"
@@ -47,13 +48,13 @@ const ImageSlider = ({images, play, setPlay}) => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 5,
         }
       },
       {
-        breakpoint: 600,
+        breakpoint: 800,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 5,
           
         }
       }
@@ -73,7 +74,7 @@ const ImageSlider = ({images, play, setPlay}) => {
 
   return (
     <>
-    <div className='second-bar' >
+    <div className='second-bar sm:px-0' >
       <div className="imgslider">
       {/* <div className='controls'>
         <button onCLick={sliderRef?.slickPrev}>
@@ -93,16 +94,20 @@ const ImageSlider = ({images, play, setPlay}) => {
               <img src={item.src}
                 alt={item.alt}
                 onClick={changeCarSource}
-                 className='car-icon-img'/>
+                 className='car-icon-img fill-blue-700 visible mx-auto'/>
 
-              <div className='car-icon-text'>{item.alt}</div>
+              {/* <div onClick={changeCarSource} className='car-icon-img fill-blue-700 visible mx-auto'>
+                {item.src} 
+                 </div> */}
+
+              <div className='car-icon-text pl-2 font-light'>{item.alt}</div>
               
             </div>
           ))}
         </Slider>
       </div>
-      <div className="filters">
-           Filters
+      <div className="filters d-flex">
+           <div><BsFilter/></div> <div>Filters</div>
       </div>
     </div>
           </>

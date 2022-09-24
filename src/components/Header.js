@@ -13,15 +13,15 @@ function Header({play,setPlay}) {
     }
     return(
         <div className='header'>
-            {/* <Link to='/'> */}
+            <Link to='/'>
             <img className="logo" src={logo} alt="logo" onClick={setHomepage}/>
-            {/* </Link> */}
+            </Link>
             <div className='header-middle'>
             <Search play={play} setPlay={setPlay}/>
             </div>
             <div className='header-end'>
-            <a className="wish-link" href="/">Fulfill a wish</a>
-            <a className="test-link" href="/carousel">Fulfill a wish</a>
+            {/* <a className="wish-link" href="/">Fulfill a wish</a>
+            <a className="test-link" href="/carousel">Fulfill a wish</a> */}
             <div className='menu-wrap'>
             <div className='menu'>
             <BiMenu/>

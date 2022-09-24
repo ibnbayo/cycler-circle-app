@@ -16,8 +16,8 @@ function Search({play,setPlay}) {
     }
     return (
     <div className="search">
-        <input className="search-box"
-         placeholder="Search items"
+        <input className="search-box border border-gray-300"
+         placeholder="Search cars on homepage"
          onChange={handleSearch}
          onFocus/>
         <SearchIcon/>
