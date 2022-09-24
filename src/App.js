@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import logo from './components/assets/logo.svg';
 import Favicon from 'react-favicon'
 import Header from './components/Header.js'
@@ -10,6 +10,8 @@ import NoSearch from './components/NoSearch'
 import images from "./images";
 import ImageSlider from "./imageSlider.js";
 import ClickedCar from './components/ClickedCar.js'
+import { Link } from "react-router-dom";
+// import { ClickedCarProvider } from './components/ClickedCarContext.js';
 // import Dialog from './components/Dialog.js'
 import './App.css';
 
@@ -28,27 +30,36 @@ function App() {
   return (
     <div className="App">
       <Favicon url={logo}></Favicon>
-      <Header play={play} setPlay={setPlay}/>
+      {/* <Header play={play} setPlay={setPlay}/> */}
       {/* <Router> */}
+      {/* <ClickedCarProvider> */}
+      <BrowserRouter>
       <Routes>
         <Route path='/'
           element={<>
+            <Header play={play} setPlay={setPlay}/>
             <ImageSlider images={images} play={play} setPlay={setPlay} />
             <Cars  play={play} setPlay={setPlay} selectedValue={selectedValue} 
               currencyData={currencyData}
+              clickedVehicle={clickedVehicle}
               setClickedVehicle={setClickedVehicle}/>
+            <Footer
+              selectedValue={selectedValue}
+              setSelectedValue={setSelectedValue}
+              currencyData={currencyData}
+              setCurrencyData={setCurrencyData}
+            />
           </>}/>
-        <Route path = "/big" element={<ClickedCar clickedVehicle={clickedVehicle}/>}/>
+        <Route path = {`/${clickedVehicle.title}`} element={<>
+            <Header play={play} setPlay={setPlay}/>
+            <ClickedCar clickedVehicle={clickedVehicle} /></>}/>
       </Routes>
+      </BrowserRouter>
+      {/* </ClickedCarProvider> */}
       {/* </Router> */}
       {/* <ImageSlider images={images} play={play} setPlay={setPlay}/>
       <Cars  play={play} setPlay={setPlay} selectedValue={selectedValue} currencyData={currencyData}/> */}
-      {/* <Footer
-       selectedValue={selectedValue}
-       setSelectedValue={setSelectedValue}
-       currencyData={currencyData}
-       setCurrencyData={setCurrencyData}
-       /> */}
+      
 
     </div>
   );
