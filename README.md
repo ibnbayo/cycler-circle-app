@@ -34,7 +34,7 @@ LIVE LINK: [https://ibnbayo.github.io/cycler-circle-app/]
 
 ## Running The Project
 Live version:
-[Productivity App](https://ibnbayo.github.io/cycler-circle-app/)
+[Cycler Circle App](https://ibnbayo.github.io/cycler-circle-app/)
 
 From the repo:<br/>
   - Clone this project locally<br/>
